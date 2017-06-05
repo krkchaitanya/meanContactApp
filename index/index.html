@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="device=device-wdth, initial-scale=1.0">
+    <title>Index App</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link href="style.css" type="text/css" rel="stylesheet">
+  </head>
+  <body>
+    <div ng-controller="mainController">
+    <h1>Contact Application...</h1><br><br>
+
+    <table class="table">
+<thead>
+  <tr>
+    <th>name</th>
+    <th>email</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><input type="text" class="form-control" ng-model="contact.name"></td>
+    <td><input type="text" class="form-control" ng-model="contact.email"></td>
+    <td><button ng-click="update()" class="btn btn-info pull-right btn-lg">Update</button></td>
+    <td><button ng-click="addone()" class="btn btn-info pull-right btn-lg">Add Data</button></td>
+  </tr><hr>
+
+  <tr ng-repeat="con in getcon">
+    <td>{{con.name}}</td>
+    <td>{{con.email}}</td>
+    <td><button class="btn btn-info " ng-click="edit(con._id)">Edit</button></td>
+    <td><button class="btn btn-danger" ng-click="remove(con._id)">Remove</button></td>
+  </tr>
+</tbody>
+
+    </table>
+</div>
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.min.js"></script>
+    <script src="https://code.jquery.com/jquery-2.1.4.min.js"
+integrity="sha384-R4/ztc4ZlRqWjqIuvf6RX5yb/v90qNGx6fS48N0tRxiGkqveZETq72KgDVJCp2TC"
+crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+    <script src="app.js" type="text/javascript"></script>
+  </body>
+</html>
